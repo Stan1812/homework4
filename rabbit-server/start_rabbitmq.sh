@@ -6,4 +6,4 @@ sudo docker run -d \
                 -h rabbitmq \
                 -p 5672:5672 \
                 -v /var/lib/rabbitmq:/var/lib/rabbitmq \
-                registry.docker-cn.com/library/rabbitmq:3.7
+                rabbitmq:3.7
