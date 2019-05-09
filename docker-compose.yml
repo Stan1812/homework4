@@ -1,7 +1,9 @@
 version: "3.2"
 services:
     rabbitmq-server:
-        build: ./rabbitmq-server
+        image: rabbitmq
+        ports: 
+          - 5672:5672
 
     sender-service:
         build: ./sender
