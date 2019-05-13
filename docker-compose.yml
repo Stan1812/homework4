@@ -4,21 +4,22 @@ services:
         image: rabbitmq
         ports: 
           - 5672:5672
-
+        network_mode: 'host'
     sender-service:
         build: ./sender
         depends_on:
             - rabbitmq-server
         volumes:
             - './sender-service:/sender-service'
+        network_mode: 'host'
 
     receiver-service:
         build: ./receiver
         depends_on:
             - rabbitmq-server
-        tty: true
         volumes:
             - './receiver-service:/receiver-service'
+        network_mode: 'host'
 
 # Host volumes used to store code.
 volumes:
